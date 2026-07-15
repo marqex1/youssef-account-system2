@@ -55,3 +55,36 @@ input:focus,select:focus,textarea:focus{border-color:var(--maroon);box-shadow:0 
 @media(max-width:1050px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;right:0;top:0;bottom:0;width:290px;z-index:1000;transform:translateX(105%);transition:.25s}.sidebar.open{transform:none}.mobile-menu{display:inline-flex}.cards{grid-template-columns:repeat(2,1fr)}.grid4,.grid3{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.main{padding:14px}.topbar{align-items:flex-start}.topbar h1{font-size:22px}.cards,.grid,.grid3,.grid4,.filters,.quick-grid{grid-template-columns:1fr}.card,.section{border-radius:18px;padding:14px}.login-card{padding:22px;border-radius:24px}.btn{width:100%}.section-head{align-items:flex-start;flex-direction:column}.section-head .actions{width:100%}.section-head .actions .btn{width:auto}.table-wrap{border-radius:12px}table{min-width:680px}.work-hero{padding:18px;border-radius:20px}.modal-card{padding:14px;border-radius:18px}}
 @media print{body{background:#fff}.sidebar,.topbar,.no-print,.btn,.filters,.form-actions{display:none!important}.app-shell{display:block}.main{padding:0}.section{box-shadow:none;border:0}.print-area{padding:0}.table-wrap{border:0}table{min-width:auto;font-size:12px}th{position:static}.report-title{page-break-after:avoid}@page{margin:14mm}}
+
+
+/* ===== V22 Mobile/Login polish ===== */
+html, body { max-width: 100%; overflow-x: hidden; }
+.login-wrap{min-height:100svh;padding:clamp(14px,4vw,26px);}
+.login-card{position:relative;width:min(440px,calc(100vw - 28px));padding:clamp(22px,5vw,34px);overflow:visible;}
+.logo{display:block;margin:0 auto 12px;max-width:96px;max-height:96px;}
+.logo-fallback{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:linear-gradient(135deg,#7a1230,#b0834f);color:#fff;font-size:30px;font-weight:900;border:4px solid var(--beige);box-shadow:0 10px 28px rgba(122,18,48,.22)}
+.password-row{display:grid !important;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch;direction:rtl;}
+.password-row input{min-width:0;width:100%;}
+.password-row .btn,.password-row button{width:auto !important;min-width:76px;padding-inline:14px;display:flex;align-items:center;justify-content:center;}
+.login-card .field{text-align:right;}
+.login-card input{font-size:16px;}
+
+@media(max-width:520px){
+  .login-title{font-size:clamp(25px,8vw,34px);line-height:1.15;}
+  .login-sub{font-size:16px;}
+  .login-card{border-radius:28px;padding:28px 22px;margin-top:18px;}
+  .logo,.logo-fallback{width:88px;height:88px;}
+  .field{margin-bottom:14px;}
+  label{font-size:15px;}
+  input,select,textarea{min-height:54px;font-size:16px;}
+  .password-row{grid-template-columns:minmax(0,1fr) 78px;}
+  .password-row .btn{min-height:54px;font-size:14px;}
+  .login-card>.btn[type="submit"], .login-card button[type="submit"]{min-height:58px;font-size:19px;border-radius:18px;margin-top:6px;}
+  .toast{right:14px;left:14px;bottom:14px;max-width:none;text-align:center;}
+}
+
+@media(max-width:380px){
+  .login-card{width:calc(100vw - 18px);padding:24px 18px;border-radius:24px;}
+  .password-row{grid-template-columns:minmax(0,1fr) 72px;gap:8px;}
+  .password-row .btn{padding-inline:8px;min-width:72px;}
+}
